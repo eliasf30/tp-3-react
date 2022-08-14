@@ -13,28 +13,27 @@ import { Todolist }  from './todolist.jsx';
 function App() {
 
 
- 
-
-
-
- 
-
-
-
   const todotaskref = useRef();
+  function localstorageitems(){
+    if (JSON.parse(localStorage.getItem("task")) !==null){return JSON.parse(localStorage.getItem("task"))}
+  else{
+    return []
+  }
+   }
+  console.log(localstorageitems)
   
-  const [todos,settodos] = useState(JSON.parse(localStorage.getItem("task")))
+  const [todos,settodos] = useState(localstorageitems())
   
   const add = () => {
     
     
     const task = todotaskref.current.value;
     if (task === "") return;
-    console.log(todos)
+    
     settodos((prevtodos) => {
       return [...prevtodos,{ task }]
 
-   
+    
     })
    
 
@@ -45,9 +44,12 @@ function App() {
   }
   const taskdelete = () => {
     settodos([])
+    
+
 
   }
-  localStorage.setItem("task",JSON.stringify(todos))
+  if (todos !=="" && todos!==undefined){
+    localStorage.setItem("task",JSON.stringify(todos))}
   return (
     <div className="App">
       

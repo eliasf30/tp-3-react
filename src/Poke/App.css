@@ -56,3 +56,11 @@ body{
 .autocompleteUL li{
   color: black;
 }
+
+
+.todos{
+  margin: 3%;
+  font-size: 2em;
+  color: black;
+  
+}

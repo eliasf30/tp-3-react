@@ -1,7 +1,8 @@
 import React from 'react'
 
+
 export function Todoitem({ todo }) {
-    const {id, task, completed} = todo
-    return <li>{task}</li>
+    const { task } = todo
+    return <li className='todos'> - {task}</li>
   
 }
