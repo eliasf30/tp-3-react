@@ -4,7 +4,7 @@ import "./App.css"
 import { useEffect, useRef } from 'react';
 import { useState } from "react";
 
-import { Todolist } from './todolist.jsx';
+import { Todolist } from './Todolist.jsx';
 
 
 
